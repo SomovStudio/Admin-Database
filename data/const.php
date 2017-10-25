@@ -1,0 +1,4 @@
+<?php
+	$PROJECT_NAME = 'ADMIN DATABASE';
+	
+?>

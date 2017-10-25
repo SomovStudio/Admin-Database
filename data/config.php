@@ -1,12 +1,14 @@
 <?php
-	$SERVER = "localhost";
-	$DATABASE = "cosmos";
-	
+	/* MAIN DATABASE */
+	$SERVER_MAIN = "localhost";
+	$DATABASE_MAIN = "main_database";
 
-	/* USERS */
+	/* USERS DATABASE */
 	$SERVER_USER = 'localhost';
-	$DATABASE_USER = 'cosmos_admin';
+	$DATABASE_USER = 'user_database';
 	$TABLE_USER = 'users';
-	$USER_NAME = 'root';
-	$USER_PASS = '';
+
+	/* ROOT USER */
+	$ROOT_USER_NAME = 'root';
+	$ROOT_USER_PASS = '';
 ?>

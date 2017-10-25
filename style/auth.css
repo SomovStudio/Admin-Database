@@ -1,0 +1,51 @@
+body {
+	height: 0;
+}
+
+#wrapper{
+	position: relative;
+ 	margin: 0 auto;
+}
+
+#content{
+	min-height: 100%;
+	position: relative;
+}
+
+#authorization{ 
+	margin: 0 auto;
+	margin-top: 10%;
+	display: block;
+	padding: 1%;
+	border-radius: 15px;
+	box-shadow: 5px 0 10px rgba(150, 150, 150, 0.5);
+	background-color:#FFFFFF;
+	width:210px;
+	height:200px;
+}
+
+#authorization p{
+	text-align: center;
+}
+
+#authorization #bottonOk{
+	width: 125px;
+	height: 33px;
+	cursor:pointer;
+	background-image:url("../img/button.png");
+	background-color:#EFEFEF;
+	margin-left: 40px;
+	color:#FFFFFF;
+}
+
+#authorization #login, #pass{
+	width: 200px;
+	height: 20px;
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+.Clear {
+	clear: both;
+}
