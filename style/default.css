@@ -1,0 +1,462 @@
+#wrapper{
+	position: relative;
+	margin: 0 auto;
+ 	min-height: 100%;
+ 	min-width: 1000px;
+ 	max-width: 1300px;
+	padding:5px 5px 0px 5px;
+	height:850px;
+}
+
+#messageError{
+	background-color:#C0C0C0;
+	color:#FFFFFF;
+	border:1px solid, #C0C0C0;
+	border-radius:5px;
+	padding:15px 15px 15px 15px;
+}
+
+/* HEADER -------------------------------------*/
+#header{
+	height:100px;
+	background-image:url("../_images/bgheader.png"); 
+	background-repeat:repeat-x; 
+	background-position:center;
+	background-color:#FFFFFF;
+	position: relative;
+	border-color:#808080;
+	border-style:solid;
+	border-left-width:1px;
+	border-top-width:1px;
+	border-right-width:1px;
+}
+
+#userInfo{
+	background-color:#808080;
+	color:#FFFFFF;
+	border:1px solid, #406060;
+	border-radius:5px;
+	width:350px;
+	height:60px;
+	position:absolute;
+	left:70%;
+	top:15%;
+	padding:5px 5px 5px 5px;
+}
+
+#logoImage{
+	margin-top: 2px;
+	margin-left: 25px;
+}
+/*------------------------------------------*/
+
+/* LEFT SIDEBAR ----------------------------*/
+#sidebarLeft{
+	background-color:#FFFFFF;
+	padding-left:5px;
+	width:195px;
+	float: left;
+	min-height: 100%;
+	border-color:#808080;
+	border-style:solid;
+	border-left-width:1px;
+	border-right-color:#C0C0C0;
+	border-right-width:1px;
+	position: relative;
+	color:#804040;
+}
+/*------------------------------------------*/
+
+/* RIGHT SIDEBAR ---------------------------*/
+#sidebarRight{
+	background-color:#FFFFFF; /*цвет фона*/
+	width:200px;
+	float: right;
+	min-height: 100%;
+	border-color:#808080;
+	border-style:solid;
+	border-right-width:1px;
+	border-left-color:#C0C0C0;
+	border-left-width:1px;
+	position: relative;
+	color:#000000;
+}
+/*-------------------------------------------*/
+
+/* HELP -------------------------------------*/
+#helpCardList{
+	opacity:0;
+	position: fixed;
+	background-color: #FFFFFF; 
+	display: block;
+	padding: 1%;
+	border-radius: 15px;
+	box-shadow: 5px 5px 10px rgba(150, 150, 150, 0.5);
+	border: 1px solid lightgray;
+	width: 550px;
+	height: 370px;
+	left: 100px;
+	top: 50px;
+	z-index: -1000;
+}
+
+#helpContentCardList{
+	width: 540px;
+	height: 280px;
+}
+
+#helpContentCardList table{
+	display: table;
+	width: 100%;
+	height: 250px;
+}
+
+#helpContentCardList tbody{
+	height: 280px;
+}
+
+#helpChallengeList{
+	opacity:0;
+	position: fixed;
+	background-color: #FFFFFF; 
+	display: block;
+	padding: 1%;
+	border-radius: 15px;
+	box-shadow: 5px 5px 10px rgba(150, 150, 150, 0.5);
+	border: 1px solid lightgray;
+	width: 550px;
+	height: 370px;
+	left: 700px;
+	top: 50px;
+	z-index: -1000;
+}
+
+#helpContentChallengeList{
+	width: 540px;
+	height: 280px;
+}
+
+#helpContentChallengeList table{
+	display: table;
+	width: 100%;
+	height: 250px;
+}
+
+#helpContentChallengeList tbody{
+	height: 280px;
+}
+/*-------------------------------------------*/
+
+/* CONTENT ----------------------------------*/
+#content{
+	background-color:#E2E2E2;
+	margin:0 200px 0px 200px;
+	min-height: 100%;
+	border-color:#C0C0C0;
+	border-style:solid;
+	border-right-width:1px;
+	border-left-width:1px;
+	border-top-width:1px;
+	position: relative;
+	padding:0px 5px 0px 5px;
+}
+
+#windowContent{
+	position:absolute;
+	top:40px;
+	background-color:#808080;
+	border: 1px solid #C0C0C0;
+	border-radius:10px;
+	width:97%;
+	height:400px;
+	color: #FFFFFF;
+	text-align: center;
+}
+#windowContentTable{
+	background-color:#FFFFFF;
+	width:100%;
+	height:90%;
+	overflow-x: scroll;
+	color: #000000;
+}
+
+#windowPanel{
+	position:absolute;
+	top:5px;
+}
+
+#search{
+	position:absolute;
+	top:5px;
+	left: 175px;
+	width: 200px;
+	height: 20px;
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+#amountCards{
+	position:absolute;
+	top:5px;
+	left: 500px;
+	width: 50px;
+	height: 20px;
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+}
+
+#windowCreateAndEdit{
+	position:absolute;
+	top:450px;
+	background-color:#808080;
+	border: 1px solid #C0C0C0;
+	border-radius:10px;
+	width:97%;
+	height:390px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#windowCreateAndEditContent{
+	background-color:#FFFFFF;
+	width:100%;
+	height:92%;
+	overflow:scroll;
+	color:#000000;
+	text-align: left;
+}
+/*------------------------------------------*/
+
+/* FOLDER ----------------------------------*/
+#footer{
+	height:50px; /*высота*/
+	position: relative;
+	margin: 0 auto;	
+	min-width: 1000px;
+ 	max-width: 1300px;
+}
+
+#footerShow{
+	width:100%;
+	height:100%;
+	background-color:#404040;
+	color:#FFFFFF;
+	text-align:center;
+}
+/*-----------------------------------------*/
+
+/* CLASSES --------------------------------*/
+.Clear {
+	clear: both; /*отменяем выравнивания*/
+}
+
+.ButtonSection{
+	width: 98%;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonSection:hover{
+	width: 98%;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonClose{
+	width: 25%;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonClose:hover{
+	width: 25%;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonAdd{
+	width: 150px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonAdd:hover{
+	width: 150px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonSearch{
+	position:absolute;
+	top: 0px;
+	left: 390px;
+	width: 100px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;	
+}
+
+.ButtonSearch:hover{
+	position:absolute;
+	top: 0px;
+	left: 390px;
+	width: 100px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;	
+}
+
+.ButtonAddAll{
+	position:absolute;
+	top: 0px;
+	left: 560px;
+	width: 80px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonAddAll:hover{
+	position:absolute;
+	top: 0px;
+	left: 560px;
+	width: 80px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonSave{
+	position: relative;
+	margin-left: 10px;
+	width: 150px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.ButtonSave:hover{
+	position: relative;
+	margin-left: 10px;
+	width: 150px;
+	height: 30px;
+	padding: 1%;
+	margin-top: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.TextBox{
+	position: relative;
+	width: 90%;
+	height: 20px;
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.ListBox{
+	position: relative;
+	width: 50%;
+	/*height: 30px;*/
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.MemoBox{
+	position: relative;
+	width: 90%;
+	height: 60px;
+	padding: 1%;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	margin-left: 10px;
+}
+
+.Label{
+	position: relative;
+	margin-left: 10px;
+}
+
+.TitleListL{
+	height:25px;
+	border-style:solid;
+	border-color:#C0C0C0;
+	border-left-width:1px;
+	border-top-left-radius:5px;
+	background-color:#808080;
+	color:#FFFFFF;
+	text-align:right;
+	padding:5px 5px 0px 5px;
+}
+
+.TitleListR{
+	height:25px;
+	border-style:solid;
+	border-color:#C0C0C0;
+	border-right-width:1px;
+	border-top-right-radius:5px;
+	background-color:#808080;
+	color:#FFFFFF;
+	text-align:right;
+	padding:5px 5px 0px 5px;
+}
+
+/*-----------------------------------------*/

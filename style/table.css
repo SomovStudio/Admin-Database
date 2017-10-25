@@ -1,0 +1,100 @@
+table{
+	display: block;
+	width: 2000px;
+}
+
+tbody{
+	display: block;
+	height: 315px;
+	overflow: auto;
+}
+
+th{
+	width: 150px;
+	background-color:#AAAAAA;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+
+td{
+	width: 150px;
+	text-align:left;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+
+tr:hover {
+    background: #DDDDDD;
+    color: #000000;
+}
+
+.TableColumnEdit{
+	width: 50px;
+	text-align:center;	
+}
+
+.TableColumnDelete{
+	width: 50px;
+	text-align:center;	
+}
+
+.TableColumn50{
+	width: 50px;
+	text-align:center;	
+}
+
+.TableColumn100{
+	width: 100px;
+	text-align:center;	
+}
+
+.TableColumn150{
+	width: 150px;
+	text-align:center;	
+}
+
+.TableColumn200{
+	width: 200px;
+	text-align:center;	
+}
+
+.TableColumn250{
+	width: 250px;
+	text-align:left;	
+}
+
+.TableColumn350{
+	width: 350px;
+	text-align:left;	
+}
+
+.TableColumn400{
+	width: 350px;
+	text-align:left;	
+}
+
+.TableColumn500{
+	width: 500px;
+	text-align:left;	
+}
+
+.TableColumn1000{
+	width: 1000px;
+	text-align:left;	
+}
+
+.TableButtonEdit{
+	width: 21px;
+	height: 21px;
+	cursor:pointer;	
+	background-image: url("../_images/edit.png");
+	background-color: rgba(255,255,255,0);
+}
+
+.TableButtonDelete{
+	width: 21px;
+	height: 21px;
+	cursor:pointer;
+	background-image: url("../_images/delete.png");
+	background-color: rgba(255,255,255,0);	
+}
