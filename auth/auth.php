@@ -20,8 +20,8 @@
 	$queryText = "SELECT * FROM ".$TABLE_USER." WHERE (name = '".$_POST['login']."' AND pass = '".$_POST['pass']."')";
 	$result = mysqli_query($mysqli, $queryText);
 	if(mysqli_fetch_assoc($result)){
-		$_SESSION['login'] = $USER_NAME;
-		$_SESSION['password'] = $USER_PASS;
+		$_SESSION['login'] = $_POST['login'];
+		$_SESSION['password'] = $_POST['pass'];
 
 		header("Location: ../pages/main/main.php");
 	}else{
