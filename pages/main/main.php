@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+//error_reporting(0);
 session_start();
 require_once "../../data/const.php"; 
 ?>
@@ -21,7 +21,13 @@ require_once "../../data/const.php";
 		<?php require_once "../../view/header/header.php"; ?>
 
 		<!-- SIDEBAR LEFT -->
-		<?php require_once "../../view/sidebar/left.php"; ?>
+		<?php 
+		require_once "../../view/sidebar/left.php";
+		$sidebarLeft = new SidebarLeft();
+		$sidebarLeft->addTitle("Main sections:");
+		$sidebarLeft->addButton("Table 1", "./main.php");
+		$sidebarLeft->render();
+		?>
 
 		<!-- SIDEBAR RIGHT -->
 		<?php require_once "../../view/sidebar/right.php"; ?>
