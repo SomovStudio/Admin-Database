@@ -41,10 +41,10 @@
 }
 
 #header_title{
-	position: relative;
+	position: absolute;
 	width: 500px;
 	left: 150px;
-	top: -50px;
+	top: 35px;
 	color: #FFFFFF;
 }
 
