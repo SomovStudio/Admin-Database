@@ -1,7 +1,7 @@
 <?php 
 error_reporting(0);
 session_start();
-include "../../data/const.php"; 
+require_once "../../data/const.php"; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,18 +11,20 @@ include "../../data/const.php";
 <link rel="stylesheet" type="text/css" href="../../style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/view.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/default.css" media="screen">
-<title><?=$PROJECT_NAME?></title>
+<title><?=Constants::$PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
+		<?php if($_SESSION['authorization'] == false) header("Location: ../error/error.php?message=You do not login"); ?>
+
 		<!-- HEADER -->
-		<?php include "../../view/header/header.php"; ?>
+		<?php require_once "../../view/header/header.php"; ?>
 
 		<!-- SIDEBAR LEFT -->
-		<?php include "../../view/sidebar/left.php"; ?>
+		<?php require_once "../../view/sidebar/left.php"; ?>
 
 		<!-- SIDEBAR RIGHT -->
-		<?php include "../../view/sidebar/right.php"; ?>
+		<?php require_once "../../view/sidebar/right.php"; ?>
 
 		<!-- CONTENT -->	
 		<div id="content">
@@ -30,7 +32,7 @@ include "../../data/const.php";
 		</div>
 
 		<!-- FOOTER -->
-		<?php include "../../view/footer/footer.php";?>
+		<?php require_once "../../view/footer/footer.php";?>
 	</div>
 </body>
 </html>

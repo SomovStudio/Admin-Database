@@ -1,4 +1,4 @@
-<?php include "data/const.php"; ?>
+<?php require_once "data/const.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +6,12 @@
 <link rel="SHORTCUT ICON" href="./img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="./style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="./style/auth.css" media="screen">
-<title><?=$PROJECT_NAME?></title>
+<title><?=Constants::$PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="content">
-			<?php include "auth/auth.php"; ?>
+			<?php require_once "auth/auth.php"; ?>
 		</div>
 		<div class="Clear"></div>
 	</div>

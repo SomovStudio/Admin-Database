@@ -2,6 +2,8 @@
 	error_reporting(0);
 	session_start();
 
+	$_SESSION['authorization'] = false;
+
 	if(isset($_GET["event"])) $event = $_GET["event"];
 	else $event = null;
 ?>
@@ -9,19 +11,19 @@
 <?php if($event == 'check') { ?>
 
 <?php 
-	include "../data/config.php";
-	
-	$mysqli = mysqli_connect($SERVER, $ROOT_USER_NAME, $ROOT_USER_PASS, $DATABASE_USER);
+	require_once "../data/config.php";
+
+	$mysqli = mysqli_connect(Config::$Server, Config::$RootUserName, Config::$RootUserPass, Config::$DatabaseUser);
 	if (mysqli_connect_errno()) {
 		header("Location: ../pages/error/error.php?message=".mysqli_connect_error());
 		exit();
 	}
 	mysqli_query($mysqli, "SET NAMES 'UTF8'");
-	$queryText = "SELECT * FROM ".$TABLE_USER." WHERE (name = '".$_POST['login']."' AND pass = '".$_POST['pass']."')";
+	$queryText = "SELECT * FROM ".Config::$TableUsers." WHERE (name = '".$_POST['login']."' AND pass = '".$_POST['pass']."')";
 	$result = mysqli_query($mysqli, $queryText);
 	if(mysqli_fetch_assoc($result)){
 		$_SESSION['login'] = $_POST['login'];
-		$_SESSION['password'] = $_POST['pass'];
+		$_SESSION['authorization'] = true;
 
 		header("Location: ../pages/main/main.php");
 	}else{
@@ -32,7 +34,7 @@
 
 <?php } elseif($event == null) {?>
 
-<div id="authorization"><p><?=$PROJECT_NAME?></p>
+<div id="authorization"><p><?=Constants::$PROJECT_NAME?></p>
 	<form action="./auth/auth.php?event=check" method="post">
 	<br>
 	<label for="login">Login:</label>

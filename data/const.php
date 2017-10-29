@@ -1,4 +1,7 @@
 <?php
-	$PROJECT_NAME = 'ADMIN DATABASE';
-	$AUTHOR = '2017 © Somov Studio';
+	class Constants
+	{
+		public static $PROJECT_NAME = 'ADMIN DATABASE';
+		public static $AUTHOR = '2017 © Somov Studio';
+	}
 ?>
