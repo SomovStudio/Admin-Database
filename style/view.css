@@ -1,5 +1,5 @@
 #footer{
-	height:50px; /*высота*/
+	height:50px;
 	position: relative;
 	margin: 0 auto;	
 	min-width: 1000px;
@@ -14,8 +14,61 @@
 	text-align:center;
 }
 
+#sidebar_left{
+	background-color:#FFFFFF;
+	padding-left:5px;
+	width:195px;
+	float: left;
+	min-height: 100%;
+	border-color:#808080;
+	border-style:solid;
+	border-left-width:1px;
+	border-right-color:#C0C0C0;
+	border-right-width:1px;
+	position: relative;
+	color:#804040;
+}
+
+#sidebar_right{
+	background-color:#FFFFFF;
+	width:200px;
+	float: right;
+	min-height: 100%;
+	border-color:#808080;
+	border-style:solid;
+	border-right-width:1px;
+	border-left-color:#C0C0C0;
+	border-left-width:1px;
+	position: relative;
+	color:#000000;
+}
+
 
 /* CLASSES --------------------------------*/
+.SidebarTitleLeft{
+	height:25px;
+	border-style:solid;
+	border-color:#C0C0C0;
+	border-left-width:1px;
+	border-top-left-radius:5px;
+	background-color:#808080;
+	color:#FFFFFF;
+	text-align:right;
+	padding:5px 5px 0px 5px;
+}
+
+.SidebarTitleRight{
+	height:25px;
+	border-style:solid;
+	border-color:#C0C0C0;
+	border-right-width:1px;
+	border-top-right-radius:5px;
+	background-color:#808080;
+	color:#FFFFFF;
+	text-align:right;
+	padding:5px 5px 0px 5px;
+}
+
 .ButtonSidebar{
 	width: 98%;
 	height: 30px;
@@ -37,3 +90,4 @@
 	color:#FFFFFF;
 	cursor:pointer;
 }
+

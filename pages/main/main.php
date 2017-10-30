@@ -22,15 +22,21 @@ require_once "../../data/const.php";
 
 		<!-- SIDEBAR LEFT -->
 		<?php 
-		require_once "../../view/sidebar/left.php";
-		$sidebarLeft = new SidebarLeft();
+		require_once "../../view/sidebar/sidebar.php";
+		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
 		$sidebarLeft->addButton("Table 1", "./main.php");
 		$sidebarLeft->render();
 		?>
 
 		<!-- SIDEBAR RIGHT -->
-		<?php require_once "../../view/sidebar/right.php"; ?>
+		<?php
+		require_once "../../view/sidebar/sidebar.php";
+		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
+		$sidebarRight->addTitle("Relative sections:");
+		$sidebarRight->addButton("Table 1_1", "./main.php");
+		$sidebarRight->render();
+		?>
 
 		<!-- CONTENT -->	
 		<div id="content">
