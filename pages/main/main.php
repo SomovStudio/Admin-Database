@@ -25,7 +25,7 @@ require_once "../../data/const.php";
 		require_once "../../view/sidebar/sidebar.php";
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
-		$sidebarLeft->addButton("Table 1", "./main.php");
+		$sidebarLeft->addButton("Home", "./main.php");
 		$sidebarLeft->render();
 		?>
 
@@ -34,7 +34,8 @@ require_once "../../data/const.php";
 		require_once "../../view/sidebar/sidebar.php";
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
-		$sidebarRight->addButton("Table 1_1", "./main.php");
+		$sidebarRight->addButton("News", "../../tables/news/select.php");
+		$sidebarRight->addButton("Contents", "../../tables/content/select.php");
 		$sidebarRight->render();
 		?>
 
