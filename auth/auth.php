@@ -34,7 +34,7 @@
 
 <?php } elseif($event == null) {?>
 
-<div id="authorization"><p><?=Constants::$PROJECT_NAME?></p>
+<div id="authorization"><p><?=Constants::PROJECT_NAME?></p>
 	<form action="./auth/auth.php?event=check" method="post">
 	<br>
 	<label for="login">Login:</label>

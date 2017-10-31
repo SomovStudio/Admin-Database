@@ -1,7 +1,7 @@
 <?php
 	class Constants
 	{
-		public static $PROJECT_NAME = 'ADMIN DATABASE';
-		public static $AUTHOR = '2017 © Somov Studio';
+		const PROJECT_NAME = 'ADMIN DATABASE';
+		const AUTHOR = '2017 © Somov Studio';
 	}
 ?>

@@ -1,5 +1,5 @@
 <?php 
-//error_reporting(0);
+error_reporting(0);
 session_start();
 require_once "../../data/const.php"; 
 ?>
@@ -11,7 +11,7 @@ require_once "../../data/const.php";
 <link rel="stylesheet" type="text/css" href="../../style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/view.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/default.css" media="screen">
-<title><?=Constants::$PROJECT_NAME?></title>
+<title><?=Constants::PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">

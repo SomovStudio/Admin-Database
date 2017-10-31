@@ -6,7 +6,7 @@
 <link rel="SHORTCUT ICON" href="../../img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="../../style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/error.css" media="screen">
-<title><?=Constants::$PROJECT_NAME?></title>
+<title><?=Constants::PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
