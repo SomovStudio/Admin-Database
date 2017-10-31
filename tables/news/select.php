@@ -15,14 +15,14 @@ require_once '../../data/const.php';
 </head>
 <body>
 	<div id="wrapper">
-		<?php if($_SESSION['authorization'] == false) header("Location: ../error/error.php?message=You do not login"); ?>
+		<?php if($_SESSION['authorization'] == false) header("Location: ../../pages/error.php?message=You are not authorized"); ?>
 
 		<!-- HEADER -->
-		<?php require_once '../../view/header/header.php'; ?>
+		<?php require_once '../../view/header.php'; ?>
 		
 		<!-- SIDEBAR LEFT -->
 		<?php 
-		require_once '../../view/sidebar/sidebar.php';
+		require_once '../../view/sidebar.php';
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
 		$sidebarLeft->addButton("News", "../../tables/news/select.php");
@@ -32,7 +32,7 @@ require_once '../../data/const.php';
 		
 		<!-- SIDEBAR RIGHT -->
 		<?php
-		require_once '../../view/sidebar/sidebar.php';
+		require_once '../../view/sidebar.php';
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
 		$sidebarRight->addButton("Contents of News", "../../tables/content/select.php");
@@ -44,7 +44,7 @@ require_once '../../data/const.php';
 		
 			<!-- SEARCH -->
 			<?php 
-			require_once '../../view/search/search.php';
+			require_once '../../view/search.php';
 			$searchPanel = new Search('./select.php', 'Enter value to search', 'Search', 5, 5);
 			$searchPanel->render();
 			?>
@@ -53,7 +53,7 @@ require_once '../../data/const.php';
 		</div>
 
 		<!-- FOOTER -->
-		<?php require_once "../../view/footer/footer.php";?>
+		<?php require_once "../../view/footer.php";?>
 	</div>
 </body>
 </html>

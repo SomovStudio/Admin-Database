@@ -15,7 +15,7 @@
 
 	$mysqli = mysqli_connect(Config::$Server, Config::$RootUserName, Config::$RootUserPass, Config::$DatabaseUser);
 	if (mysqli_connect_errno()) {
-		header("Location: ../pages/error/error.php?message=".mysqli_connect_error());
+		header("Location: ../pages/error.php?message=".mysqli_connect_error());
 		exit();
 	}
 	mysqli_query($mysqli, "SET NAMES 'UTF8'");
@@ -25,9 +25,9 @@
 		$_SESSION['login'] = $_POST['login'];
 		$_SESSION['authorization'] = true;
 
-		header("Location: ../pages/main/main.php");
+		header("Location: ../pages/main.php");
 	}else{
-		header("Location: ../pages/error/error.php?message=Incorrect username or password");
+		header("Location: ../pages/error.php?message=Incorrect username or password");
 		exit();
 	}
 ?>
