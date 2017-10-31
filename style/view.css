@@ -59,8 +59,14 @@
 	border-radius: 5px;
 }
 
+#button{
+	position:absolute;
+}
 
-/* CLASSES --------------------------------*/
+
+/* 
+ * == CLASSES =======================================
+*/
 .SidebarTitleLeft{
 	height:25px;
 	border-style:solid;
@@ -133,4 +139,20 @@
 	background-color:#666666;
 	color:#FFFFFF;
 	cursor:pointer;	
+}
+
+.Button{
+	padding: 1%;
+	border-radius: 5px;
+	background-color:#AAAAAA;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+
+.Button:hover{
+	padding: 1%;
+	border-radius: 5px;
+	background-color:#666666;
+	color:#FFFFFF;
+	cursor:pointer;
 }

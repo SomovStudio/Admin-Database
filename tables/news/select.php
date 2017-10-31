@@ -42,14 +42,20 @@ require_once '../../data/const.php';
         <!-- CONTENT -->	
 		<div id="content">
 		
+			<!-- BUTTON ADD -->
+			<?php 
+			require_once '../../view/button.php';
+			$buttonAdd = new Button('./select.php', 'Add', 30, 50, 5, 5);
+			$buttonAdd->render();
+			?>
+			
 			<!-- SEARCH -->
 			<?php 
 			require_once '../../view/search.php';
-			$searchPanel = new Search('./select.php', 'Enter value to search', 'Search', 5, 5);
+			$searchPanel = new Search('./select.php', 'Enter value to search', 'Search', 65, 5);
 			$searchPanel->render();
 			?>
-			
-			
+
 		</div>
 
 		<!-- FOOTER -->

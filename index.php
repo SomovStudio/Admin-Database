@@ -1,4 +1,6 @@
-<?php require_once 'data/const.php'; ?>
+<?php 
+require_once './data/const.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
