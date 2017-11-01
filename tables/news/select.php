@@ -56,6 +56,18 @@ require_once '../../data/const.php';
 			$searchPanel->render();
 			?>
 
+			<!-- TABLE -->
+			<?php 
+			require_once '../../view/table.php';
+			$table = new Table('News', 350, 5, 40);
+			$table->addColunm('ID', 50);
+			$table->addColunm('Date', 100);
+			$table->addColunm('Name', 150);
+			$table->addColunm('Description', 400);
+			$table->setData();
+			$table->render();
+			?>
+
 		</div>
 
 		<!-- FOOTER -->

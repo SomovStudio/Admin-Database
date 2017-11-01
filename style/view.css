@@ -103,6 +103,23 @@
 	position:absolute;
 }
 
+#table{
+	position:absolute;
+	background-color:#808080;
+	border: 1px solid #C0C0C0;
+	border-radius:10px;
+	width:98%;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#table_content{
+	background-color:#FFFFFF;
+	width:100%;
+	height:90%;
+	overflow-x: scroll;
+	color: #000000;
+}
 
 /* 
  * == CLASSES =======================================

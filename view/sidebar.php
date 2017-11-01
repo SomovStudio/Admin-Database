@@ -42,4 +42,3 @@ class Sidebar
         echo $this->content;
     }
 }
-?>

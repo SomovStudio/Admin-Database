@@ -18,4 +18,3 @@ class Search
         echo $this->content;
     }
 }
-?>

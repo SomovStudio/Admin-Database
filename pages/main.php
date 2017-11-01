@@ -35,13 +35,13 @@ require_once "../data/const.php";
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
 		$sidebarRight->addButton("News", "../tables/news/select.php");
-		$sidebarRight->addButton("Contents", "../tables/content/select.php");
+		$sidebarRight->addButton("Articles", "../tables/articles/select.php");
 		$sidebarRight->render();
 		?>
 
 		<!-- CONTENT -->	
 		<div id="content">
-			<h1>Main</h1>
+			<h1>Welcome to administration database.</h1>
 		</div>
 
 		<!-- FOOTER -->
