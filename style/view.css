@@ -121,6 +121,37 @@
 	color: #000000;
 }
 
+
+/*
+ * == TAGS ==========================================
+*/
+table{
+	display: block;
+}
+
+tbody{
+	display: block;
+	overflow: auto;
+}
+
+th{
+	background-color:#AAAAAA;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+
+td{
+	text-align:left;
+	border-bottom: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+}
+
+tr:hover {
+    background: #DDDDDD;
+    color: #000000;
+}
+
+
 /* 
  * == CLASSES =======================================
 */

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 session_start();
 require_once '../../data/const.php';
 ?>
@@ -64,7 +64,7 @@ require_once '../../data/const.php';
 			$table->addColunm('Date', 100);
 			$table->addColunm('Name', 150);
 			$table->addColunm('Description', 400);
-			$table->setData();
+			$table->setData('');
 			$table->render();
 			?>
 
