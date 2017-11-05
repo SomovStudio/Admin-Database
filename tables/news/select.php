@@ -1,7 +1,9 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 session_start();
 require_once '../../data/const.php';
+require_once '../../data/config.php';
+require_once '../../data/db.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,13 +60,15 @@ require_once '../../data/const.php';
 
 			<!-- TABLE -->
 			<?php 
+			$dataTable = DB::select('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+			
 			require_once '../../view/table.php';
 			$table = new Table('News', 350, 5, 40);
-			$table->addColunm('ID', 50);
-			$table->addColunm('Date', 100);
-			$table->addColunm('Name', 150);
-			$table->addColunm('Description', 400);
-			$table->setData('');
+			$table->addColunm('news_id', 'ID', 50);
+			$table->addColunm('news_date','Date', 100);
+			$table->addColunm('news_name','Name', 150);
+			$table->addColunm('news_description','Description', 400);
+			$table->setData($dataTable);
 			$table->render();
 			?>
 
