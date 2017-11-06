@@ -7,6 +7,10 @@ class Table
     private $height = 0;
     private $columnArray;
     
+    const TYPE_COLUMN = 'type_column';
+    const TYPE_BUTTON_EDIT = 'type_button_edit';
+    const TYPE_BUTTON_DELETE = 'type_button_delete';
+    
     function __construct($title, $height, $x, $y)
     {
         $this->height = $height;
@@ -18,7 +22,21 @@ class Table
     {
         $this->width += $size;
         $this->columns .= "<th style='width: ".$size."px'>".$title."</th>";
-        $this->columnArray[$name] = array('title'=>$title, 'size'=>$size);
+        $this->columnArray[$name] = array('type'=>self::TYPE_COLUMN, 'title'=>$title, 'size'=>$size);
+    }
+    
+    public function addButtonEdit($action, $id)
+    {
+        $this->width += 50;
+        $this->columns .= "<th class='TableColumnEdit'>...</th>";
+        $this->columnArray['button_edit'] = array('type'=>self::TYPE_BUTTON_EDIT, 'action'=>$action, 'id'=>$id, 'size'=>50);
+    }
+    
+    public function addButtonDelete($action, $id)
+    {
+        $this->width += 50;
+        $this->columns .= "<th class='TableColumnDelete'>...</th>";
+        $this->columnArray['button_delete'] = array('type'=>self::TYPE_BUTTON_DELETE, 'action'=>$action, 'id'=>$id, 'size'=>50);
     }
     
     public function setData($dataTable)
@@ -36,7 +54,27 @@ class Table
             $this->content .= "<tr>";
             foreach ($this->columnArray as $key => $value)
             {
-                $this->content .= "<td style='width: ".$value['size']."px;'>".$row[$key]."</td>";
+                if($value['type'] == self::TYPE_COLUMN)
+                {
+                    $this->content .= "<td style='width: ".$value['size']."px;'>".$row[$key]."</td>";
+                }
+                elseif ($value['type'] == self::TYPE_BUTTON_EDIT)
+                {
+                    $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
+                    $this->content .= "<form action='".$value['action']."?id=".$row[$value['id']]."' method='post'>";
+                    $this->content .= "<input type='submit' value='' class='TableButtonEdit'>";
+                    $this->content .= "</form>";
+                    $this->content .= "</td>";
+                }
+                elseif ($value['type'] == self::TYPE_BUTTON_DELETE)
+                {
+                    $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
+                    $this->content .= "<form action='".$value['action']."?id=".$row[$value['id']]."' method='post'>";
+                    $this->content .= "<input type='submit' value='' class='TableButtonDelete'>";
+                    $this->content .= "</form>";
+                    $this->content .= "</td>";
+                }
+                
             }
             $this->content .= "</tr>";
         }

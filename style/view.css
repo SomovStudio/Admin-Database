@@ -244,3 +244,29 @@ tr:hover {
 	color:#FFFFFF;
 	cursor:pointer;
 }
+
+.TableColumnEdit{
+	width: 50px;
+	text-align:center;
+}
+
+.TableColumnDelete{
+	width: 50px;
+	text-align:center;
+}
+
+.TableButtonEdit{
+	width: 21px;
+	height: 21px;
+	cursor:pointer;	
+	background-image: url("../img/edit.png");
+	background-color: rgba(255,255,255,0);
+}
+
+.TableButtonDelete{
+	width: 21px;
+	height: 21px;
+	cursor:pointer;
+	background-image: url("../img/delete.png");
+	background-color: rgba(255,255,255,0);	
+}

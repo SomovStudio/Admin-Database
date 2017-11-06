@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 session_start();
 require_once '../../data/const.php';
 require_once '../../data/config.php';
@@ -65,6 +65,8 @@ require_once '../../data/db.php';
 			require_once '../../view/table.php';
 			$table = new Table('News', 350, 5, 40);
 			$table->addColunm('news_id', 'ID', 50);
+			$table->addButtonEdit('update.php', 'news_id');
+			$table->addButtonDelete('delete.php', 'news_id');
 			$table->addColunm('news_date','Date', 100);
 			$table->addColunm('news_name','Name', 150);
 			$table->addColunm('news_description','Description', 400);
