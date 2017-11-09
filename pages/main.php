@@ -1,7 +1,8 @@
 <?php 
 error_reporting(0);
 session_start();
-require_once "../data/const.php"; 
+include_once "../data/const.php"; 
+include_once '../view/sidebar.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@ require_once "../data/const.php";
 <link rel="stylesheet" type="text/css" href="../style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../style/view.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../style/default.css" media="screen">
-<title><?=Constants::PROJECT_NAME?></title>
+<title><?php echo Constants::PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
@@ -22,7 +23,6 @@ require_once "../data/const.php";
 
 		<!-- SIDEBAR LEFT -->
 		<?php 
-		require_once "../view/sidebar.php";
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
 		$sidebarLeft->addButton("Home", "./main.php");
@@ -31,7 +31,6 @@ require_once "../data/const.php";
 
 		<!-- SIDEBAR RIGHT -->
 		<?php
-		require_once "../view/sidebar.php";
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
 		$sidebarRight->addButton("News", "../tables/news/select.php");

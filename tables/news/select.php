@@ -1,9 +1,13 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 session_start();
-require_once '../../data/const.php';
-require_once '../../data/config.php';
-require_once '../../data/db.php';
+include_once '../../data/const.php';
+include_once '../../data/config.php';
+include_once '../../data/db.php';
+include_once '../../view/sidebar.php';
+include_once '../../view/button.php';
+include_once '../../view/search.php';
+include_once '../../view/table.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +17,7 @@ require_once '../../data/db.php';
 <link rel="stylesheet" type="text/css" href="../../style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/view.css" media="screen">
 <link rel="stylesheet" type="text/css" href="../../style/default.css" media="screen">
-<title><?=Constants::PROJECT_NAME?></title>
+<title><?php echo Constants::PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
@@ -24,7 +28,6 @@ require_once '../../data/db.php';
 		
 		<!-- SIDEBAR LEFT -->
 		<?php 
-		require_once '../../view/sidebar.php';
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
 		$sidebarLeft->addButton("News", "../../tables/news/select.php");
@@ -34,7 +37,6 @@ require_once '../../data/db.php';
 		
 		<!-- SIDEBAR RIGHT -->
 		<?php
-		require_once '../../view/sidebar.php';
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
 		$sidebarRight->addButton("Contents of News", "../../tables/content/select.php");
@@ -46,14 +48,12 @@ require_once '../../data/db.php';
 		
 			<!-- BUTTON ADD -->
 			<?php 
-			require_once '../../view/button.php';
 			$buttonAdd = new Button('./select.php', 'Add', 30, 50, 5, 5);
 			$buttonAdd->render();
 			?>
 			
 			<!-- SEARCH -->
 			<?php 
-			require_once '../../view/search.php';
 			$searchPanel = new Search('./select.php', 'Enter value to search', 'Search', 65, 5);
 			$searchPanel->render();
 			?>
@@ -62,7 +62,6 @@ require_once '../../data/db.php';
 			<?php 
 			$dataTable = DB::select('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
 			
-			require_once '../../view/table.php';
 			$table = new Table('News', 350, 5, 40);
 			$table->addColunm('news_id', 'ID', 50);
 			$table->addButtonEdit('update.php', ['news_id']);

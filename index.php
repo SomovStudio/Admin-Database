@@ -1,4 +1,4 @@
-<?php require_once './data/const.php';?>
+<?php include_once './data/const.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +6,7 @@
 <link rel="SHORTCUT ICON" href="./img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="./style/body.css" media="screen">
 <link rel="stylesheet" type="text/css" href="./style/auth.css" media="screen">
-<title><?=Constants::PROJECT_NAME?></title>
+<title><?php echo Constants::PROJECT_NAME?></title>
 </head>
 <body>
 	<div id="wrapper">
