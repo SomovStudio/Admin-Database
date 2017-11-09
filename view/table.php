@@ -18,6 +18,17 @@ class Table
         $this->content .= "<div id='table_content'>";
     }
     
+    private function getPath($parameters, $row)
+    {
+        $path = "";
+        foreach ($parameters as $key => $value)
+        {
+            if($path !== "") $path .= "&";
+            $path .= $value."=".$row[$value];
+        }
+        return $path;
+    }
+    
     public function addColunm($name, $title, $size)
     {
         $this->width += $size;
@@ -25,18 +36,18 @@ class Table
         $this->columnArray[$name] = array('type'=>self::TYPE_COLUMN, 'title'=>$title, 'size'=>$size);
     }
     
-    public function addButtonEdit($action, $id)
+    public function addButtonEdit($action, $parameters = [])
     {
         $this->width += 50;
         $this->columns .= "<th class='TableColumnEdit'>...</th>";
-        $this->columnArray['button_edit'] = array('type'=>self::TYPE_BUTTON_EDIT, 'action'=>$action, 'id'=>$id, 'size'=>50);
+        $this->columnArray['button_edit'] = array('type'=>self::TYPE_BUTTON_EDIT, 'action'=>$action, 'parameters'=>$parameters, 'size'=>50);
     }
     
-    public function addButtonDelete($action, $id)
+    public function addButtonDelete($action, $parameters = [])
     {
         $this->width += 50;
         $this->columns .= "<th class='TableColumnDelete'>...</th>";
-        $this->columnArray['button_delete'] = array('type'=>self::TYPE_BUTTON_DELETE, 'action'=>$action, 'id'=>$id, 'size'=>50);
+        $this->columnArray['button_delete'] = array('type'=>self::TYPE_BUTTON_DELETE, 'action'=>$action, 'parameters'=>$parameters, 'size'=>50);
     }
     
     public function setData($dataTable)
@@ -61,7 +72,7 @@ class Table
                 elseif ($value['type'] == self::TYPE_BUTTON_EDIT)
                 {
                     $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
-                    $this->content .= "<form action='".$value['action']."?id=".$row[$value['id']]."' method='post'>";
+                    $this->content .= "<form action='".$value['action']."?".$this->getPath($value['parameters'], $row)."' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonEdit'>";
                     $this->content .= "</form>";
                     $this->content .= "</td>";
@@ -69,7 +80,7 @@ class Table
                 elseif ($value['type'] == self::TYPE_BUTTON_DELETE)
                 {
                     $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
-                    $this->content .= "<form action='".$value['action']."?id=".$row[$value['id']]."' method='post'>";
+                    $this->content .= "<form action='".$value['action']."?".$this->getPath($value['parameters'], $row)."' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonDelete'>";
                     $this->content .= "</form>";
                     $this->content .= "</td>";
