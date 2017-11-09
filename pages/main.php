@@ -33,8 +33,8 @@ include_once '../view/sidebar.php';
 		<?php
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
-		$sidebarRight->addButton("News", "../tables/news/select.php");
-		$sidebarRight->addButton("Articles", "../tables/articles/select.php");
+		$sidebarRight->addButton("News", "../tables/news/main.php");
+		$sidebarRight->addButton("Articles", "../tables/articles/main.php");
 		$sidebarRight->render();
 		?>
 

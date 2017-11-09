@@ -30,8 +30,8 @@ include_once '../../view/table.php';
 		<?php 
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
-		$sidebarLeft->addButton("News", "../../tables/news/select.php");
-		$sidebarLeft->addButton("Contents", "../../tables/content/select.php");
+		$sidebarLeft->addButton("News", "../../tables/news/main.php");
+		$sidebarLeft->addButton("Contents", "../../tables/content/main.php");
 		$sidebarLeft->render();
 		?>
 		
@@ -39,7 +39,7 @@ include_once '../../view/table.php';
 		<?php
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
-		$sidebarRight->addButton("Contents of News", "../../tables/content/select.php");
+		$sidebarRight->addButton("Contents of News", "../../tables/content/main.php");
 		$sidebarRight->render();
 		?>
 	
@@ -48,13 +48,13 @@ include_once '../../view/table.php';
 		
 			<!-- BUTTON ADD -->
 			<?php 
-			$buttonAdd = new Button('./select.php', 'Add', 30, 50, 5, 5);
+			$buttonAdd = new Button('./main.php', 'Add', 30, 50, 5, 5);
 			$buttonAdd->render();
 			?>
 			
 			<!-- SEARCH -->
 			<?php 
-			$searchPanel = new Search('./select.php', 'Enter value to search', 'Search', 65, 5);
+			$searchPanel = new Search('./main.php', 'Enter value to search', 'Search', 65, 5);
 			$searchPanel->render();
 			?>
 
@@ -64,8 +64,8 @@ include_once '../../view/table.php';
 			
 			$table = new Table('News', 350, 5, 40);
 			$table->addColunm('news_id', 'ID', 50);
-			$table->addButtonEdit('update.php', ['news_id']);
-			$table->addButtonDelete('delete.php', ['news_id']);
+			$table->addButtonEdit('edit.php', ['news_id']);
+			$table->addButtonDelete('remove.php', ['news_id']);
 			$table->addColunm('news_date','Date', 100);
 			$table->addColunm('news_name','Name', 150);
 			$table->addColunm('news_description','Description', 400);
