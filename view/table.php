@@ -72,7 +72,7 @@ class Table
                 elseif ($value['type'] == self::TYPE_BUTTON_EDIT)
                 {
                     $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
-                    $this->content .= "<form action='".$value['action']."?".$this->getPath($value['parameters'], $row)."' method='post'>";
+                    $this->content .= "<form action='".$value['action']."?event=edit&".$this->getPath($value['parameters'], $row)."' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonEdit'>";
                     $this->content .= "</form>";
                     $this->content .= "</td>";
@@ -80,7 +80,7 @@ class Table
                 elseif ($value['type'] == self::TYPE_BUTTON_DELETE)
                 {
                     $this->content .= "<td style='width: ".$value['size']."px; text-align:center'>";
-                    $this->content .= "<form action='".$value['action']."?".$this->getPath($value['parameters'], $row)."' method='post'>";
+                    $this->content .= "<form action='".$value['action']."?event=remove&".$this->getPath($value['parameters'], $row)."' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonDelete'>";
                     $this->content .= "</form>";
                     $this->content .= "</td>";

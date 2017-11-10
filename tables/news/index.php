@@ -30,8 +30,8 @@ include_once '../../view/table.php';
 		<?php 
 		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
 		$sidebarLeft->addTitle("Main sections:");
-		$sidebarLeft->addButton("News", "../../tables/news/main.php");
-		$sidebarLeft->addButton("Contents", "../../tables/content/main.php");
+		$sidebarLeft->addButton("News", "../../tables/news/index.php");
+		$sidebarLeft->addButton("Articles", "../../tables/content/index.php");
 		$sidebarLeft->render();
 		?>
 		
@@ -39,41 +39,12 @@ include_once '../../view/table.php';
 		<?php
 		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
 		$sidebarRight->addTitle("Relative sections:");
-		$sidebarRight->addButton("Contents of News", "../../tables/content/main.php");
+		$sidebarRight->addButton("Articles of News", "../../tables/content/index.php");
 		$sidebarRight->render();
 		?>
 	
         <!-- CONTENT -->	
-		<div id="content">
-		
-			<!-- BUTTON ADD -->
-			<?php 
-			$buttonAdd = new Button('./main.php', 'Add', 30, 50, 5, 5);
-			$buttonAdd->render();
-			?>
-			
-			<!-- SEARCH -->
-			<?php 
-			$searchPanel = new Search('./main.php', 'Enter value to search', 'Search', 65, 5);
-			$searchPanel->render();
-			?>
-
-			<!-- TABLE -->
-			<?php 
-			$dataTable = DB::select('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
-			
-			$table = new Table('News', 350, 5, 40);
-			$table->addColunm('news_id', 'ID', 50);
-			$table->addButtonEdit('edit.php', ['news_id']);
-			$table->addButtonDelete('remove.php', ['news_id']);
-			$table->addColunm('news_date','Date', 100);
-			$table->addColunm('news_name','Name', 150);
-			$table->addColunm('news_description','Description', 400);
-			$table->setData($dataTable);
-			$table->render();
-			?>
-
-		</div>
+		<?php require_once './content.php'; ?>
 
 		<!-- FOOTER -->
 		<?php require_once "../../view/footer.php";?>
