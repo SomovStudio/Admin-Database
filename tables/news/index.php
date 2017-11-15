@@ -8,6 +8,7 @@ include_once '../../view/sidebar.php';
 include_once '../../view/button.php';
 include_once '../../view/search.php';
 include_once '../../view/table.php';
+include_once '../../view/form.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,34 +21,34 @@ include_once '../../view/table.php';
 <title><?php echo Constants::PROJECT_NAME?></title>
 </head>
 <body>
-	<div id="wrapper">
-		<?php if($_SESSION['authorization'] == false) header("Location: ../../pages/error.php?message=You are not authorized"); ?>
+    <div id="wrapper">
+        <?php if($_SESSION['authorization'] == false) header("Location: ../../pages/error.php?message=You are not authorized"); ?>
 
-		<!-- HEADER -->
-		<?php require_once '../../view/header.php'; ?>
-		
-		<!-- SIDEBAR LEFT -->
-		<?php 
-		$sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
-		$sidebarLeft->addTitle("Main sections:");
-		$sidebarLeft->addButton("News", "../../tables/news/index.php");
-		$sidebarLeft->addButton("Articles", "../../tables/content/index.php");
-		$sidebarLeft->render();
-		?>
-		
-		<!-- SIDEBAR RIGHT -->
-		<?php
-		$sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
-		$sidebarRight->addTitle("Relative sections:");
-		$sidebarRight->addButton("Articles of News", "../../tables/content/index.php");
-		$sidebarRight->render();
-		?>
-	
+        <!-- HEADER -->
+        <?php require_once '../../view/header.php'; ?>
+
+        <!-- SIDEBAR LEFT -->
+        <?php 
+        $sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
+        $sidebarLeft->addTitle("Main sections:");
+        $sidebarLeft->addButton("News", "../../tables/news/index.php");
+        $sidebarLeft->addButton("Articles", "../../tables/content/index.php");
+        $sidebarLeft->render();
+        ?>
+
+        <!-- SIDEBAR RIGHT -->
+        <?php
+        $sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
+        $sidebarRight->addTitle("Relative sections:");
+        $sidebarRight->addButton("Articles of News", "../../tables/content/index.php");
+        $sidebarRight->render();
+        ?>
+
         <!-- CONTENT -->	
-		<?php require_once './content.php'; ?>
+        <?php require_once './content.php'; ?>
 
-		<!-- FOOTER -->
-		<?php require_once "../../view/footer.php";?>
-	</div>
+        <!-- FOOTER -->
+        <?php require_once "../../view/footer.php";?>
+    </div>
 </body>
 </html>

@@ -10,12 +10,11 @@ $searchPanel->render();
 
 if(isset($_GET['event']))
 {
- 
-    if($_GET['event'] === 'edit')
+   if($_GET['event'] === 'edit')
     {
         /* QUERY */
-		$news_id = $_GET['news_id'];
-		$dataTable = DB::select('SELECT * FROM news WHERE(news_id='.$news_id.')', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+        $news_id = $_GET['news_id'];
+        $dataTable = DB::select('SELECT * FROM news WHERE(news_id='.$news_id.')', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
     }
     elseif ($_GET['event'] === 'search')
     {
@@ -33,7 +32,6 @@ if(isset($_GET['event']))
     {
         
     }
-    
 }else{  //  DEFAULT
     
     /* QUERY */
@@ -50,5 +48,12 @@ $table->addColunm('news_name','Name', 150);
 $table->addColunm('news_description','Description', 400);
 $table->setData($dataTable);
 $table->render();
+
+/* FORM */
+$form = new Form('Add/Edit', './', 440, 5, 400);
+$form->addTextBox('TextBox1', 'Name', 'Enter name', '', false);
+$form->addComboBox('ComboBox1', 'Data', 'Select data', [1,2,3], 2);
+$form->addButtonSave();
+$form->render();
 ?>
 </div>

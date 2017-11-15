@@ -9,11 +9,11 @@
 <title><?php echo Constants::PROJECT_NAME?></title>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="content">
-			<?php require_once './auth/auth.php'; ?>
-		</div>
-		<div class="Clear"></div>
-	</div>
+    <div id="wrapper">
+        <div id="content">
+            <?php require_once './auth/auth.php'; ?>
+        </div>
+        <div class="Clear"></div>
+    </div>
 </body>
 </html>

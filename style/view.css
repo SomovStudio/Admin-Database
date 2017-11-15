@@ -1,149 +1,166 @@
 #header{
-	height:100px;
-	background-image:url("../img/bgheader.png"); 
-	background-repeat:repeat-x; 
-	background-position:center;
-	background-color:#FFFFFF;
-	position: relative;
-	border-color:#808080;
-	border-style:solid;
-	border-left-width:1px;
-	border-top-width:1px;
-	border-right-width:1px;
+    height:100px;
+    background-image:url("../img/bgheader.png"); 
+    background-repeat:repeat-x; 
+    background-position:center;
+    background-color:#FFFFFF;
+    position: relative;
+    border-color:#808080;
+    border-style:solid;
+    border-left-width:1px;
+    border-top-width:1px;
+    border-right-width:1px;
 }
 
 #header_title_logo{
-	position: absolute;
-	background-image:url("../img/logo.png"); 
-	background-repeat:no-repeat; 
-	background-position:left;
-	width: 500px;
-	height: 100px;
-	left: 50px;
-	top: 0px;
-	color: #FFFFFF;
-	text-align: center;
+    position: absolute;
+    background-image:url("../img/logo.png"); 
+    background-repeat:no-repeat; 
+    background-position:left;
+    width: 500px;
+    height: 100px;
+    left: 50px;
+    top: 0px;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 #header_info{
-	background-color:#808080;
-	color:#FFFFFF;
-	border:1px solid, #406060;
-	border-radius:5px;
-	width:400px;
-	height:60px;
-	position:absolute;
-	left:60%;
-	top:15%;
-	padding:5px 5px 5px 5px;
+    background-color:#808080;
+    color:#FFFFFF;
+    border-radius:5px;
+    width:400px;
+    height:60px;
+    position:absolute;
+    left:60%;
+    top:15%;
+    padding:5px 5px 5px 5px;
 }
 
 #footer{
-	height:50px;
-	position: relative;
-	margin: 0 auto;	
-	min-width: 1000px;
- 	max-width: 1300px;
+    height:50px;
+    position: relative;
+    margin: 0 auto;	
+    min-width: 1000px;
+    max-width: 1300px;
 }
 
 #footer_title{
-	width:100%;
-	height:100%;
-	background-color:#404040;
-	color:#FFFFFF;
-	text-align:center;
+    width:100%;
+    height:100%;
+    background-color:#404040;
+    color:#FFFFFF;
+    text-align:center;
 }
 
 #sidebar_left{
-	background-color:#FFFFFF;
-	padding-left:5px;
-	width:195px;
-	float: left;
-	min-height: 100%;
-	border-color:#808080;
-	border-style:solid;
-	border-left-width:1px;
-	border-right-color:#C0C0C0;
-	border-right-width:1px;
-	position: relative;
-	color:#804040;
+    background-color:#FFFFFF;
+    padding-left:5px;
+    width:195px;
+    float: left;
+    min-height: 100%;
+    border-color:#808080;
+    border-style:solid;
+    border-left-width:1px;
+    border-right-color:#C0C0C0;
+    border-right-width:1px;
+    position: relative;
+    color:#804040;
 }
 
 #sidebar_right{
-	background-color:#FFFFFF;
-	width:200px;
-	float: right;
-	min-height: 100%;
-	border-color:#808080;
-	border-style:solid;
-	border-right-width:1px;
-	border-left-color:#C0C0C0;
-	border-left-width:1px;
-	position: relative;
-	color:#000000;
+    background-color:#FFFFFF;
+    width:200px;
+    float: right;
+    min-height: 100%;
+    border-color:#808080;
+    border-style:solid;
+    border-right-width:1px;
+    border-left-color:#C0C0C0;
+    border-left-width:1px;
+    position: relative;
+    color:#000000;
 }
 
 #search_panel{
-	position:absolute;
-	top:5px;
+    position:absolute;
+    top:5px;
 }
 
 #search{
-	position:absolute;
-	top:2px;
-	left: 0px;
-	width: 200px;
-	height: 25px;
-	padding: 1%;
-	border: 1px solid lightgray;
-	border-radius: 5px;
+    position:absolute;
+    top:2px;
+    left: 0px;
+    width: 200px;
+    height: 25px;
+    padding: 1%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
 }
 
 #button{
-	position:absolute;
+    position:absolute;
 }
 
 #table{
-	position:absolute;
-	background-color:#808080;
-	border: 1px solid #C0C0C0;
-	border-radius:10px;
-	width:98%;
-	color: #FFFFFF;
-	text-align: center;
+    position:absolute;
+    background-color:#808080;
+    border: 1px solid #C0C0C0;
+    border-radius:10px;
+    width:98%;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 #table_content{
-	background-color:#FFFFFF;
-	width:100%;
-	height:90%;
-	overflow-x: scroll;
-	color: #000000;
+    background-color:#FFFFFF;
+    width:100%;
+    height:90%;
+    overflow-x: scroll;
+    color: #000000;
 }
 
+#form{
+    position:absolute;
+    background-color:#808080;
+    border: 1px solid #C0C0C0;
+    border-radius:10px;
+    color: #FFFFFF;
+    text-align: center;
+    width:98%;
+}
+
+#form_content{
+    background-color:#FFFFFF;
+    width:100%;
+    height:92%;
+    overflow:scroll;
+    color:#000000;
+    text-align: left;
+}
 
 /*
  * == TAGS ==========================================
 */
 table{
-	display: block;
+    display: block;
 }
 
 tbody{
-	display: block;
-	overflow: auto;
+    display: block;
+    overflow: auto;
 }
 
 th{
-	background-color:#AAAAAA;
-	border-bottom: 1px solid #DDDDDD;
-	border-left: 1px solid #DDDDDD;
+    background-color:#AAAAAA;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
 }
 
 td{
-	text-align:left;
-	border-bottom: 1px solid #DDDDDD;
-	border-left: 1px solid #DDDDDD;
+    text-align:left;
+    border-bottom: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
 }
 
 tr:hover {
@@ -156,117 +173,177 @@ tr:hover {
  * == CLASSES =======================================
 */
 .SidebarTitleLeft{
-	height:25px;
-	border-style:solid;
-	border-color:#C0C0C0;
-	border-left-width:1px;
-	border-top-left-radius:5px;
-	background-color:#808080;
-	color:#FFFFFF;
-	text-align:right;
-	padding:5px 5px 0px 5px;
+    height:25px;
+    border-style:solid;
+    border-color:#C0C0C0;
+    border-left-width:1px;
+    border-top-left-radius:5px;
+    background-color:#808080;
+    color:#FFFFFF;
+    text-align:right;
+    padding:5px 5px 0px 5px;
 }
 
 .SidebarTitleRight{
-	height:25px;
-	border-style:solid;
-	border-color:#C0C0C0;
-	border-right-width:1px;
-	border-top-right-radius:5px;
-	background-color:#808080;
-	color:#FFFFFF;
-	text-align:right;
-	padding:5px 5px 0px 5px;
+    height:25px;
+    border-style:solid;
+    border-color:#C0C0C0;
+    border-right-width:1px;
+    border-top-right-radius:5px;
+    background-color:#808080;
+    color:#FFFFFF;
+    text-align:right;
+    padding:5px 5px 0px 5px;
 }
 
 .ButtonSidebar{
-	width: 98%;
-	height: 30px;
-	padding: 1%;
-	margin-top: 1%;
-	border-radius: 5px;
-	background-color:#AAAAAA;
-	color:#FFFFFF;
-	cursor:pointer;
+    width: 98%;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;
 }
 
 .ButtonSidebar:hover{
-	width: 98%;
-	height: 30px;
-	padding: 1%;
-	margin-top: 1%;
-	border-radius: 5px;
-	background-color:#666666;
-	color:#FFFFFF;
-	cursor:pointer;
+    width: 98%;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;
 }
 
 .ButtonSearch{
-	position:absolute;
-	top: 0px;
-	left: 210px;
-	width: 100px;
-	height: 30px;
-	padding: 1%;
-	margin-top: 1%;
-	border-radius: 5px;
-	background-color:#AAAAAA;
-	color:#FFFFFF;
-	cursor:pointer;	
+    position:absolute;
+    top: 0px;
+    left: 210px;
+    width: 100px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;	
 }
 
 .ButtonSearch:hover{
-	position:absolute;
-	top: 0px;
-	left: 210px;
-	width: 100px;
-	height: 30px;
-	padding: 1%;
-	margin-top: 1%;
-	border-radius: 5px;
-	background-color:#666666;
-	color:#FFFFFF;
-	cursor:pointer;	
+    position:absolute;
+    top: 0px;
+    left: 210px;
+    width: 100px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;	
 }
 
 .Button{
-	padding: 1%;
-	border-radius: 5px;
-	background-color:#AAAAAA;
-	color:#FFFFFF;
-	cursor:pointer;
+    padding: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;
 }
 
 .Button:hover{
-	padding: 1%;
-	border-radius: 5px;
-	background-color:#666666;
-	color:#FFFFFF;
-	cursor:pointer;
+    padding: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;
 }
 
 .TableColumnEdit{
-	width: 50px;
-	text-align:center;
+    width: 50px;
+    text-align:center;
 }
 
 .TableColumnDelete{
-	width: 50px;
-	text-align:center;
+    width: 50px;
+    text-align:center;
 }
 
 .TableButtonEdit{
-	width: 21px;
-	height: 21px;
-	cursor:pointer;	
-	background-image: url("../img/edit.png");
-	background-color: rgba(255,255,255,0);
+    width: 21px;
+    height: 21px;
+    cursor:pointer;	
+    background-image: url("../img/edit.png");
+    background-color: rgba(255,255,255,0);
 }
 
 .TableButtonDelete{
-	width: 21px;
-	height: 21px;
-	cursor:pointer;
-	background-image: url("../img/delete.png");
-	background-color: rgba(255,255,255,0);	
+    width: 21px;
+    height: 21px;
+    cursor:pointer;
+    background-image: url("../img/delete.png");
+    background-color: rgba(255,255,255,0);	
+}
+
+.Label{
+    position: relative;
+    margin-left: 10px;
+}
+
+.TextBox{
+    position: relative;
+    width: 90%;
+    height: 20px;
+    padding: 1%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.ComboBox{
+    position: relative;
+    width: 50%;
+    padding: 1%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.MemoBox{
+    position: relative;
+    width: 90%;
+    height: 60px;
+    padding: 1%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.ButtonSave{
+    position: relative;
+    margin-left: 10px;
+    width: 150px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.ButtonSave:hover{
+    position: relative;
+    margin-left: 10px;
+    width: 150px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;
 }
