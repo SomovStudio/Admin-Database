@@ -33,6 +33,11 @@ class Form
         $this->content .= "</select><br>";
     }
 
+    public function addMemoBox($name, $label, $placeholder, $value){
+        $this->content .= "<br><label for='".$name."' class='Label'>".$label."</label>";
+        $this->content .= "<br><textarea name='".$name."' id='".$name."' cols='40' rows='30' placeholder='".$placeholder."' class='MemoBox'>".$value."</textarea><br>";
+    }
+
     public function addButtonSave($value = 'Save'){
         $this->content .= "<br><input type='submit' value='".$value."' class='ButtonSave'>";
     }

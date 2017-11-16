@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 session_start();
 include_once '../../data/const.php';
 include_once '../../data/config.php';

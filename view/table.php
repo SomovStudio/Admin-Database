@@ -60,6 +60,7 @@ class Table
         $this->content .= "</thead>";
         $this->content .= "<tbody style='height: ".($this->height - 80)."px;'>";
         
+        mysqli_data_seek($dataTable, 0);
         while($row = mysqli_fetch_assoc($dataTable))
         {
             $this->content .= "<tr>";

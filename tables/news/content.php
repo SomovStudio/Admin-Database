@@ -32,10 +32,29 @@ if(isset($_GET['event']))
     {
         
     }
+    
+    /* FORM */
+    mysqli_data_seek($dataTable, 0);
+    $row = mysqli_fetch_assoc($dataTable);
+    $form = new Form('Add/Edit', './', 440, 5, 400);
+    $form->addTextBox('news_id', 'ID:', 'Enter id', $row['news_id'], false);
+    $form->addTextBox('news_name', 'Name:', 'Enter name', $row['news_name']);
+    $form->addTextBox('news_date', 'Date:', 'Enter date', $row['news_date']);
+    $form->addMemoBox('news_description', 'Description:', 'Enter description', $row['news_description']);
+    $form->addButtonSave();
 }else{  //  DEFAULT
     
     /* QUERY */
     $dataTable = DB::select('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+    
+    /* FORM */
+    $form = new Form('Add/Edit', './', 440, 5, 400);
+    $form->addTextBox('news_id', 'ID:', 'Enter id', '', false);
+    $form->addTextBox('news_name', 'Name:', 'Enter name', '');
+    $form->addTextBox('news_date', 'Date:', 'Enter date', date('Y-m-d H:i:s'));
+    $form->addMemoBox('news_description', 'Description:', 'Enter description', '');
+    //$form->addComboBox('ComboBox1', 'Data', 'Select data', [1,2,3], 2);
+    $form->addButtonSave();
 }
 
 /* TABLE */
@@ -50,10 +69,6 @@ $table->setData($dataTable);
 $table->render();
 
 /* FORM */
-$form = new Form('Add/Edit', './', 440, 5, 400);
-$form->addTextBox('TextBox1', 'Name', 'Enter name', '', false);
-$form->addComboBox('ComboBox1', 'Data', 'Select data', [1,2,3], 2);
-$form->addButtonSave();
-$form->render();
+if(isset($form)) $form->render();
 ?>
 </div>
