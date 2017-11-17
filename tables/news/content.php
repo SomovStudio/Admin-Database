@@ -12,13 +12,13 @@ if(isset($_GET['event']))
 {
    if($_GET['event'] === 'edit')
     {
-        /* QUERY */
         $news_id = $_GET['news_id'];
-        $dataTable = DB::select('SELECT * FROM news WHERE(news_id='.$news_id.')', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+        $dataTable = DB::getData('SELECT * FROM news WHERE(news_id='.$news_id.')', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
     }
     elseif ($_GET['event'] === 'search')
     {
-        
+        $search = $_POST['search'];
+        $dataTable = DB::getData('SELECT * FROM news WHERE(news_name="'.$search.'")', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
     }
     elseif ($_GET['event'] === 'add')
     {
@@ -42,10 +42,10 @@ if(isset($_GET['event']))
     $form->addTextBox('news_date', 'Date:', 'Enter date', $row['news_date']);
     $form->addMemoBox('news_description', 'Description:', 'Enter description', $row['news_description']);
     $form->addButtonSave();
+    
 }else{  //  DEFAULT
     
-    /* QUERY */
-    $dataTable = DB::select('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+    $dataTable = DB::getData('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
     
     /* FORM */
     $form = new Form('Add/Edit', './', 440, 5, 400);
