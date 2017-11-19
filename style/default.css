@@ -1,29 +1,29 @@
 #wrapper{
-	position: relative;
-	margin: 0 auto;
- 	min-height: 100%;
- 	min-width: 1000px;
- 	max-width: 1300px;
-	padding:5px 5px 0px 5px;
-	height:850px;
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+    min-width: 1000px;
+    max-width: 1300px;
+    padding:5px 5px 0px 5px;
+    height:850px;
 }
 
 #content{
-	background-color:#E2E2E2;
-	margin:0 200px 0px 200px;
-	min-height: 100%;
-	border-color:#C0C0C0;
-	border-style:solid;
-	border-right-width:1px;
-	border-left-width:1px;
-	border-top-width:1px;
-	position: relative;
-	padding:0px 5px 0px 5px;
+    background-color:#E2E2E2;
+    margin:0 200px 0px 200px;
+    min-height: 100%;
+    border-color:#C0C0C0;
+    border-style:solid;
+    border-right-width:1px;
+    border-left-width:1px;
+    border-top-width:1px;
+    position: relative;
+    padding:0px 5px 0px 5px;
 }
 
 /* 
  * == CLASSES =======================================
 */
 .Clear {
-	clear: both;
+    clear: both;
 }
