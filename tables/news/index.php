@@ -32,7 +32,7 @@ include_once '../../view/form.php';
             $sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
             $sidebarLeft->addTitle("Main sections:");
             $sidebarLeft->addButton("News", "../../tables/news/index.php");
-            $sidebarLeft->addButton("Articles", "../../tables/content/index.php");
+            $sidebarLeft->addButton("Articles", "../../tables/articles/index.php");
             $sidebarLeft->render();
             ?>
 
@@ -40,7 +40,9 @@ include_once '../../view/form.php';
             <?php
             $sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
             $sidebarRight->addTitle("Relative sections:");
-            $sidebarRight->addButton("Articles of News", "../../tables/content/index.php");
+            if (isset($_GET['event']) && $_GET['event'] === 'edit') {
+                $sidebarRight->addButton("Articles of News", "../../tables/articles/index.php?event=search&news_id=" . $_GET['news_id']);
+            }
             $sidebarRight->render();
             ?>
 
