@@ -9,34 +9,56 @@
     $searchPanel->render();
 
     if (isset($_GET['event'])) {
-        if ($_GET['event'] === 'edit') {
-            $news_id = $_GET['news_id'];
-            $dataTable = DB::getData('SELECT * FROM news WHERE(news_id=' . $news_id . ')', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
-        } elseif ($_GET['event'] === 'search') {
+        if ($_GET['event'] === Constants::EVENT_EDIT) {
+            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_GET['news_id'] . ")");
+                    
+        } elseif ($_GET['event'] === Constants::EVENT_SEARCH) {
             $search = $_POST['search'];
-            $dataTable = DB::getData('SELECT * FROM news WHERE(news_name="' . $search . '")', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
-        } elseif ($_GET['event'] === 'add') {
+            $dataTable = DB::getData("SELECT * FROM news WHERE(news_name='" . $search . "')");
             
-        } elseif ($_GET['event'] === 'update') {
+        } elseif ($_GET['event'] === Constants::EVENT_ADD) {
+            $dataTable = DB::setData("INSERT INTO news (news_name, news_date, news_description) VALUES (" .
+                    "'" . $_POST['news_name'] . "', " .
+                    "'" . $_POST['news_date'] . "', " .
+                    "'" . $_POST['news_description'] . "'" .
+                    ")");
+            header("Location: ./index.php?");
             
-        } elseif ($_GET['event'] === 'remove') {
+        } elseif ($_GET['event'] === Constants::EVENT_UPDATE) {
+            $dataTable = DB::setData("UPDATE news SET " .
+                    "news_name = '" . $_POST['news_name'] . "', " .
+                    "news_date = '" . $_POST['news_date'] . "', " .
+                    "news_description = '" . $_POST['news_description'] . "' " .
+                    "WHERE(news_id=" . $_GET['news_id'] . ")");
+            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_GET['news_id'] . ")");
+            
+        } elseif ($_GET['event'] === Constants::EVENT_REMOVE) {
+            $dataTable = DB::setData("DELETE FROM news WHERE (news_id=" . $_GET['news_id'] . ")");
+            header("Location: ./index.php?");
+            
+        } elseif ($_GET['event'] === Constants::EVENT_TARGET) {
             
         }
 
-        /* FORM */
         mysqli_data_seek($dataTable, 0);
         $row = mysqli_fetch_assoc($dataTable);
-        $form = new Form('Add/Edit', './', 440, 5, 400);
+        
+        
+        /* FORM */
+        $path = './index.php?event=' . Constants::EVENT_UPDATE . '&news_id=' . $row['news_id'];
+        $form = new Form('Add/Edit', $path, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', $row['news_id'], false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', $row['news_name']);
         $form->addTextBox('news_date', 'Date:', 'Enter date', $row['news_date']);
         $form->addMemoBox('news_description', 'Description:', 'Enter description', $row['news_description']);
         $form->addButtonSave();
+        
     } else {  //  DEFAULT
-        $dataTable = DB::getData('SELECT * FROM news', Config::$Server, Config::$DatabaseMain, Config::$RootUserName, Config::$RootUserPass);
+        $dataTable = DB::getData('SELECT * FROM news');
 
         /* FORM */
-        $form = new Form('Add/Edit', './', 440, 5, 400);
+        $path = './index.php?event=' . Constants::EVENT_ADD;
+        $form = new Form('Add/Edit', $path, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', '', false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', '');
         $form->addTextBox('news_date', 'Date:', 'Enter date', date('Y-m-d H:i:s'));
