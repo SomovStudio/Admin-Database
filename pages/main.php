@@ -26,6 +26,8 @@ include_once '../view/sidebar.php';
             $sidebarLeft = new Sidebar(Sidebar::SIDE_LEFT);
             $sidebarLeft->addTitle("Main sections:");
             $sidebarLeft->addButton("Home", "./main.php");
+            $sidebarLeft->addButton("News", "../tables/news/index.php");
+            $sidebarLeft->addButton("Articles", "../tables/articles/index.php");
             $sidebarLeft->render();
             ?>
 
@@ -33,8 +35,6 @@ include_once '../view/sidebar.php';
             <?php
             $sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
             $sidebarRight->addTitle("Relative sections:");
-            $sidebarRight->addButton("News", "../tables/news/index.php");
-            $sidebarRight->addButton("Articles", "../tables/articles/index.php");
             $sidebarRight->render();
             ?>
 

@@ -46,7 +46,7 @@
         
         /* FORM */
         $path = './index.php?event=' . Constants::EVENT_UPDATE . '&news_id=' . $row['news_id'];
-        $form = new Form('Add/Edit', $path, 440, 5, 400);
+        $form = new Form('Edit news', $path, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', $row['news_id'], false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', $row['news_name']);
         $form->addTextBox('news_date', 'Date:', 'Enter date', $row['news_date']);
@@ -58,7 +58,7 @@
 
         /* FORM */
         $path = './index.php?event=' . Constants::EVENT_ADD;
-        $form = new Form('Add/Edit', $path, 440, 5, 400);
+        $form = new Form('Add news', $path, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', '', false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', '');
         $form->addTextBox('news_date', 'Date:', 'Enter date', date('Y-m-d H:i:s'));
