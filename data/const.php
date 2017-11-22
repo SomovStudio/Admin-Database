@@ -10,6 +10,6 @@ class Constants {
     const EVENT_UPDATE = 'update';
     const EVENT_REMOVE = 'remove';
     const EVENT_SEARCH = 'search';
-    const EVENT_TARGET = 'remove';
+    const EVENT_TARGET = 'target';
     
 }

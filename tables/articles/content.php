@@ -10,31 +10,68 @@
 
     if (isset($_GET['event'])) {
         if ($_GET['event'] === Constants::EVENT_EDIT) {
-                    
+            $dataTable = DB::getData("SELECT * FROM articles WHERE(article_id=" . $_GET['article_id'] . ")");
+
         } elseif ($_GET['event'] === Constants::EVENT_SEARCH) {
+            $search = $_POST['search'];
+            $dataTable = DB::getData("SELECT * FROM articles WHERE(article_name='" . $search . "')");
             
         } elseif ($_GET['event'] === Constants::EVENT_ADD) {
+            $dataTable = DB::setData("INSERT INTO articles (article_name, article_news_id, article_description) VALUES (" .
+                    "'" . $_POST['article_name'] . "', " .
+                    "" . $_POST['article_news_id'] . ", " .
+                    "'" . $_POST['article_description'] . "'" .
+                    ")");
+            header("Location: ./index.php?");
             
         } elseif ($_GET['event'] === Constants::EVENT_UPDATE) {
+            $dataTable = DB::setData("UPDATE articles SET " .
+                    "article_name = '" . $_POST['article_name'] . "', " .
+                    "article_news_id = " . $_POST['article_news_id'] . ", " .
+                    "article_description = '" . $_POST['article_description'] . "' " .
+                    "WHERE(article_id=" . $_GET['article_id'] . ")");
+            $dataTable = DB::getData("SELECT * FROM articles WHERE(article_id=" . $_GET['article_id'] . ")");
             
         } elseif ($_GET['event'] === Constants::EVENT_REMOVE) {
+            $dataTable = DB::setData("DELETE FROM articles WHERE (article_id=" . $_GET['article_id'] . ")");
+            header("Location: ./index.php?");
             
         } elseif ($_GET['event'] === Constants::EVENT_TARGET) {
-            
+            $dataTable = DB::getData("SELECT * FROM articles WHERE(article_news_id=" . $_GET['news_id'] . ")");
         }
 
+        $news = DB::getData('SELECT * FROM news');
+        while ($row = mysqli_fetch_assoc($news)) {
+            $dataNews[$row['news_id']] = [$row['news_id'], $row['news_name']];
+        }
+
+        mysqli_data_seek($dataTable, 0);
+        $row = mysqli_fetch_assoc($dataTable);
+        
+        /* FORM */
+        $path = './index.php?event=' . Constants::EVENT_UPDATE . '&article_id=' . $row['article_id'];
+        $form = new Form('Edit article', $path, 440, 5, 400);
+        $form->addTextBox('article_id', 'ID:', 'Enter id', $row['article_id'], false);
+        $form->addTextBox('article_name', 'Name:', 'Enter name', $row['article_name']);
+        $form->addComboBox('article_news_id', 'Mews', 'Select data', $dataNews, $row['article_news_id']);
+        $form->addMemoBox('article_description', 'Description:', 'Enter description', $row['article_description']);
+        $form->addButtonSave();
         
     } else {  //  DEFAULT
-    	$dataTable = DB::getData('SELECT * FROM articles');
+    	$news = DB::getData('SELECT * FROM news');
+        while ($row = mysqli_fetch_assoc($news)) {
+            $dataNews[$row['news_id']] = [$row['news_id'], $row['news_name']];
+        }
+
+        $dataTable = DB::getData('SELECT * FROM articles');
 
     	/* FORM */
         $path = './index.php?event=' . Constants::EVENT_ADD;
         $form = new Form('Add article', $path, 440, 5, 400);
         $form->addTextBox('article_id', 'ID:', 'Enter id', '', false);
         $form->addTextBox('article_name', 'Name:', 'Enter name', '');
-        $form->addComboBox('article_news_id', 'Mews', 'Select data', [1,2,3], 1);
+        $form->addComboBox('article_news_id', 'Mews', 'Select data', $dataNews, '');
         $form->addMemoBox('article_description', 'Description:', 'Enter description', '');
-        
         $form->addButtonSave();
     }
 
