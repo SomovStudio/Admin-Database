@@ -8,23 +8,23 @@
     $searchPanel = new Search('./index.php?event=search', 'Enter value to search', 'Search', 65, 5);
     $searchPanel->render();
 
-    if (isset($_GET['event'])) {
-        if ($_GET['event'] === Constants::EVENT_EDIT) {
-            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_GET['news_id'] . ")");
+    if (isset($_POST['event'])) {
+        if ($_POST['event'] === Constants::EVENT_EDIT) {
+            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_POST['news_id'] . ")");
                     
-        } elseif ($_GET['event'] === Constants::EVENT_SEARCH) {
+        } elseif ($_POST['event'] === Constants::EVENT_SEARCH) {
             $search = $_POST['search'];
             $dataTable = DB::getData("SELECT * FROM news WHERE(news_name='" . $search . "')");
             
-        } elseif ($_GET['event'] === Constants::EVENT_ADD) {
+        } elseif ($_POST['event'] === Constants::EVENT_ADD) {
             $dataTable = DB::setData("INSERT INTO news (news_name, news_date, news_description) VALUES (" .
                     "'" . $_POST['news_name'] . "', " .
                     "'" . $_POST['news_date'] . "', " .
                     "'" . $_POST['news_description'] . "'" .
                     ")");
-            header("Location: ./index.php?");
+            header("Location: ./index.php");
             
-        } elseif ($_GET['event'] === Constants::EVENT_UPDATE) {
+        } elseif ($_POST['event'] === Constants::EVENT_UPDATE) {
             $dataTable = DB::setData("UPDATE news SET " .
                     "news_name = '" . $_POST['news_name'] . "', " .
                     "news_date = '" . $_POST['news_date'] . "', " .
@@ -32,11 +32,11 @@
                     "WHERE(news_id=" . $_POST['news_id'] . ")");
             $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_POST['news_id'] . ")");
             
-        } elseif ($_GET['event'] === Constants::EVENT_REMOVE) {
-            $dataTable = DB::setData("DELETE FROM news WHERE (news_id=" . $_GET['news_id'] . ")");
-            header("Location: ./index.php?");
+        } elseif ($_POST['event'] === Constants::EVENT_REMOVE) {
+            $dataTable = DB::setData("DELETE FROM news WHERE (news_id=" . $_POST['news_id'] . ")");
+            header("Location: ./index.php");
             
-        } elseif ($_GET['event'] === Constants::EVENT_TARGET) {
+        } elseif ($_POST['event'] === Constants::EVENT_TARGET) {
             
         }
 
@@ -76,7 +76,8 @@
     $table->render();
 
     /* FORM */
-    if (isset($form))
+    if (isset($form)){
         $form->render();
+    }
     ?>
 </div>

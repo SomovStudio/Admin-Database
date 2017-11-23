@@ -20,6 +20,16 @@ class Sidebar {
         }
     }
 
+    private function getParams($parameters) {
+        $params = '';
+        if ($parameters != null) {
+            foreach ($parameters as $value) {
+                $params .= "<input name='" . $value['name'] . "' value='" . $value['value'] . "' type='hidden'>";
+            }
+        }
+        return $params;
+    }
+
     public function addTitle($title) {
         if ($this->select_side === self::SIDE_LEFT) {
             $this->content .= "<div class='SidebarTitleLeft'>" . $title . "</div>";
@@ -28,9 +38,10 @@ class Sidebar {
         }
     }
 
-    public function addButton($value, $action) {
+    public function addButton($value, $action, $params = null) {
         $this->content .= "<form action='" . $action . "' method='post'>";
         $this->content .= "<input type='submit' value='" . $value . "' class='ButtonSidebar'>";
+        $this->content .= $this->getParams($params);
         $this->content .= "</form>";
     }
 

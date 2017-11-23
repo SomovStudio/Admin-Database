@@ -1,7 +1,6 @@
 <?php
 error_reporting(0);
 session_start();
-include_once '../../data/debug.php';
 include_once '../../data/const.php';
 include_once '../../data/config.php';
 include_once '../../data/db.php';
@@ -42,8 +41,11 @@ include_once '../../view/form.php';
             <?php
             $sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
             $sidebarRight->addTitle("Relative sections:");
-            if (isset($_GET['event']) && $_GET['event'] === 'edit') {
-                $sidebarRight->addButton("Articles of News", "../../tables/articles/index.php?event=target&news_id=" . $_GET['news_id']);
+            if (isset($_POST['event']) && $_POST['event'] === Constants::EVENT_EDIT) {
+                $sidebarRight->addButton("Articles of News", "../../tables/articles/index.php", [
+                    ['name' => 'news_id', 'value' => $_POST['news_id']],
+                    ['name' => 'event', 'value' => Constants::EVENT_TARGET]
+                ]);
             }
             $sidebarRight->render();
             ?>

@@ -28,6 +28,14 @@ class Table {
         return $path;
     }
 
+    private function getParams($parameters, $row) {
+        $params = '';
+        foreach ($parameters as $key => $value) {
+            $params .= "<input name='" . $value . "' value='" . $row[$value] . "' type='hidden'>";
+        }
+        return $params;
+    }
+
     public function addColunm($name, $title, $size) {
         $this->width += $size;
         $this->columns .= "<th style='width: " . $size . "px'>" . $title . "</th>";
@@ -63,14 +71,18 @@ class Table {
                     $this->content .= "<td style='width: " . $value['size'] . "px;'>" . $row[$key] . "</td>";
                 } elseif ($value['type'] == self::TYPE_BUTTON_EDIT) {
                     $this->content .= "<td style='width: " . $value['size'] . "px; text-align:center'>";
-                    $this->content .= "<form action='" . $value['action'] . "?event=edit&" . $this->getPath($value['parameters'], $row) . "' method='post'>";
+                    $this->content .= "<form action='" . $value['action'] . "' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonEdit'>";
+                    $this->content .= "<input name='event' value='edit' type='hidden'>";
+                    $this->content .= $this->getParams($value['parameters'], $row);
                     $this->content .= "</form>";
                     $this->content .= "</td>";
                 } elseif ($value['type'] == self::TYPE_BUTTON_DELETE) {
                     $this->content .= "<td style='width: " . $value['size'] . "px; text-align:center'>";
-                    $this->content .= "<form action='" . $value['action'] . "?event=remove&" . $this->getPath($value['parameters'], $row) . "' method='post'>";
+                    $this->content .= "<form action='" . $value['action'] . "' method='post'>";
                     $this->content .= "<input type='submit' value='' class='TableButtonDelete'>";
+                    $this->content .= "<input name='event' value='remove' type='hidden'>";
+                    $this->content .= $this->getParams($value['parameters'], $row);
                     $this->content .= "</form>";
                     $this->content .= "</td>";
                 }
