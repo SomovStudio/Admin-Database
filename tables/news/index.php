@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
+include_once '../../data/debug.php';
 include_once '../../data/const.php';
 include_once '../../data/config.php';
 include_once '../../data/db.php';

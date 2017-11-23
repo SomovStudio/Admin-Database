@@ -4,10 +4,10 @@ class Form {
 
     private $content = '';
 
-    function __construct($title, $action, $height, $x, $y) {
+    function __construct($title, $action, $event, $height, $x, $y) {
         $this->content = "<div id='form' style='height:" . $height . "px; left:" . $x . "px; top:" . $y . "px'>" . $title . "<dr>";
         $this->content .= "<div id='form_content'>";
-        $this->content .= "<form action='" . $action . "' method='post'>";
+        $this->content .= "<form action='" . $action . "?event=" . $event . "' method='post'>";
     }
 
     public function addTextBox($name, $label, $placeholder, $value, $readonly = true) {
@@ -16,6 +16,7 @@ class Form {
             $this->content .= "<br><input type='text' name='" . $name . "' id='" . $name . "' placeholder='" . $placeholder . "' class='TextBox' value='" . $value . "'><br>";
         } else {
             $this->content .= "<br><input type='text' name='" . $name . "' id='" . $name . "' placeholder='" . $placeholder . "' class='TextBox' disabled value='" . $value . "'><br>";
+            $this->content .= "<br><input name='" . $name . "' value='" . $value . "' type='hidden'";
         }
     }
 

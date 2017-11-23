@@ -29,8 +29,8 @@
                     "news_name = '" . $_POST['news_name'] . "', " .
                     "news_date = '" . $_POST['news_date'] . "', " .
                     "news_description = '" . $_POST['news_description'] . "' " .
-                    "WHERE(news_id=" . $_GET['news_id'] . ")");
-            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_GET['news_id'] . ")");
+                    "WHERE(news_id=" . $_POST['news_id'] . ")");
+            $dataTable = DB::getData("SELECT * FROM news WHERE(news_id=" . $_POST['news_id'] . ")");
             
         } elseif ($_GET['event'] === Constants::EVENT_REMOVE) {
             $dataTable = DB::setData("DELETE FROM news WHERE (news_id=" . $_GET['news_id'] . ")");
@@ -45,8 +45,7 @@
         
         
         /* FORM */
-        $path = './index.php?event=' . Constants::EVENT_UPDATE . '&news_id=' . $row['news_id'];
-        $form = new Form('Edit news', $path, 440, 5, 400);
+        $form = new Form('Edit news', './index.php', Constants::EVENT_UPDATE, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', $row['news_id'], false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', $row['news_name']);
         $form->addTextBox('news_date', 'Date:', 'Enter date', $row['news_date']);
@@ -57,13 +56,11 @@
         $dataTable = DB::getData('SELECT * FROM news');
 
         /* FORM */
-        $path = './index.php?event=' . Constants::EVENT_ADD;
-        $form = new Form('Add news', $path, 440, 5, 400);
+        $form = new Form('Add news', './index.php', Constants::EVENT_ADD, 440, 5, 400);
         $form->addTextBox('news_id', 'ID:', 'Enter id', '', false);
         $form->addTextBox('news_name', 'Name:', 'Enter name', '');
         $form->addTextBox('news_date', 'Date:', 'Enter date', date('Y-m-d H:i:s'));
         $form->addMemoBox('news_description', 'Description:', 'Enter description', '');
-        //$form->addComboBox('ComboBox1', 'Data', 'Select data', [1,2,3], 2);
         $form->addButtonSave();
     }
 
