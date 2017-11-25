@@ -3,6 +3,7 @@ error_reporting(0);
 session_start();
 include_once "../data/const.php";
 include_once '../view/sidebar.php';
+include_once '../view/board.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +41,12 @@ include_once '../view/sidebar.php';
 
             <!-- CONTENT -->	
             <div id="content">
-                <h1>Welcome to administration database.</h1>
+                <?php
+                    $board = new Board("Board", 825, 5, 5);
+                    $board->addLabel("News", "../tables/news/index.php", "This is a news");
+                    $board->addLabel("Articles", "../tables/articles/index.php", "This is a articles of news");
+                    $board->render();
+                ?>
             </div>
 
             <!-- FOOTER -->

@@ -120,6 +120,28 @@
     color: #000000;
 }
 
+#board {
+    position:absolute;
+    background-color:#808080;
+    border: 1px solid #C0C0C0;
+    border-radius:10px;
+    width:98%;
+    height: 95%;
+    left: 5px;
+    top: 5px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#board_content {
+    background-color:#FFFFFF;
+    width:100%;
+    height:95%;
+    overflow-x: scroll;
+    color: #000000;
+    text-align: left;
+}
+
 #form{
     position:absolute;
     background-color:#808080;
@@ -346,4 +368,8 @@ tr:hover {
     background-color:#666666;
     color:#FFFFFF;
     cursor:pointer;
+}
+
+.BoardLabel {
+    padding: 1em;
 }
