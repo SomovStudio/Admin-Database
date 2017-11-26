@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Ноя 19 2017 г., 07:25
+-- Время создания: Ноя 26 2017 г., 10:25
 -- Версия сервера: 5.7.14
 -- Версия PHP: 7.0.10
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `demodb`
 --
+CREATE DATABASE IF NOT EXISTS `demodb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `demodb`;
 
 -- --------------------------------------------------------
 
@@ -32,6 +34,14 @@ CREATE TABLE `articles` (
   `article_description` text NOT NULL,
   `article_news_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `articles`
+--
+
+INSERT INTO `articles` (`article_id`, `article_name`, `article_description`, `article_news_id`) VALUES
+(1, 'The Best 4K, 1440p, And 1080p Gaming Monitor Black Friday 2017 Deals', 'With 4K on the rise and high refresh rate becoming more common, now is a good to time take a look at gaming monitors. These displays packed with great specs have become more affordable, even moreso with Black Friday sales going on now. So, we took a look at several retailers to find the best deals on PC gaming monitors. Note that some of these items may run out of stock during the course of these sales.', 1),
+(2, 'PS4 Pro Discounted To $350 At GameStop And Walmart Right Now For Black Friday 2017', 'Black Friday 2017 is right around the corner, and we\'ve gotten a look at the deals many retailers will offer this year. And while it initially seemed like there wouldn\'t be any deals for Sony\'s 4K-capable PlayStation 4 Pro, GameStop\'s ad has revealed it will be on sale for $350. The deal is available right now.', 2);
 
 -- --------------------------------------------------------
 
@@ -51,8 +61,8 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`news_id`, `news_date`, `news_name`, `news_description`) VALUES
-(1, '2017-11-05', 'News 0001', 'Description news 0001'),
-(2, '2017-11-09', 'News 0002', 'Description news 0002');
+(1, '2017-11-05', 'The Best 4K Monitor', 'The Best 4K, 1440p, And 1080p Gaming Monitor Black Friday 2017 Deals'),
+(2, '2017-11-09', 'PS4 Pro', 'PS4 Pro Discounted To $350 At GameStop And Walmart Right Now For Black Friday 2017');
 
 -- --------------------------------------------------------
 
@@ -104,7 +114,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `article_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `article_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `news`
 --
