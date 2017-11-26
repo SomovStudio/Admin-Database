@@ -25,10 +25,10 @@ class Form {
         $this->content .= "<br><label for='" . $name . "' class='Label'>" . $label . "</label>";
         $this->content .= "<br><select name='" . $name . "' id='" . $name . "' placeholder='" . $placeholder . "' class='ComboBox'>";
         foreach ($data_values as $key => $value) {
-            if ($value[0] == $value_default) {
-                $this->content .= "<option value='" . $value[0] . "' selected>" . $value[0] . ": " . $value[1] . "</option>";
+            if ($value['value'] == $value_default) {
+                $this->content .= "<option value='" . $value['value'] . "' selected>" . $value['value'] . ": " . $value['name'] . "</option>";
             } else {
-                $this->content .= "<option value='" . $value[0] . "'>" . $value[0] . ": " . $value[1] . "</option>";
+                $this->content .= "<option value='" . $value['value'] . "'>" . $value['value'] . ": " . $value['name'] . "</option>";
             }
         }
         $this->content .= "</select><br>";

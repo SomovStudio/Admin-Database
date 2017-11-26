@@ -37,9 +37,12 @@
 
         $news = DB::getData('SELECT * FROM news');
         while ($row = mysqli_fetch_assoc($news)) {
-            $dataNews[$row['news_id']] = [$row['news_id'], $row['news_name']];
+            $dataNews[$row['news_id']] = [
+                'value' => $row['news_id'],
+                'name' => $row['news_name']
+            ];
         }
-
+        
         mysqli_data_seek($dataTable, 0);
         $row = mysqli_fetch_assoc($dataTable);
 
@@ -53,7 +56,10 @@
     } else {  //  DEFAULT
         $news = DB::getData('SELECT * FROM news');
         while ($row = mysqli_fetch_assoc($news)) {
-            $dataNews[$row['news_id']] = [$row['news_id'], $row['news_name']];
+            $dataNews[$row['news_id']] = [
+                'value' => $row['news_id'],
+                'name' => $row['news_name']
+            ];
         }
 
         $dataTable = DB::getData('SELECT * FROM articles');

@@ -4,6 +4,7 @@ session_start();
 include_once '../../data/const.php';
 include_once '../../data/config.php';
 include_once '../../data/db.php';
+include_once '../../data/debug.php';
 include_once '../../view/sidebar.php';
 include_once '../../view/button.php';
 include_once '../../view/search.php';
