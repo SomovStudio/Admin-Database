@@ -5,7 +5,7 @@
     $buttonAdd->render();
 
     /* SEARCH */
-    $searchPanel = new Search('./index.php?event=search', 'Enter value to search', 'Search', 65, 5);
+    $searchPanel = new Search('./index.php', 'Enter value to search', 'Search', 65, 5);
     $searchPanel->render();
 
     if (isset($_POST['event'])) {
