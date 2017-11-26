@@ -45,6 +45,10 @@ class Sidebar {
         $this->content .= "</form>";
     }
 
+    public function addEmptyButton($id, $name) {
+        $this->content .= "<button id='" . $id . "' class='EmptyButton'>" . $name . "</button>";
+    }
+
     public function render() {
         $this->content .= "</div>";
         echo $this->content;

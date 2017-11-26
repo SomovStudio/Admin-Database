@@ -373,3 +373,78 @@ tr:hover {
 .BoardLabel {
     padding: 1em;
 }
+
+.EmptyButton{
+    width: 98%;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.EmptyButton:hover{
+    width: 98%;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.EmptyButtonClose{
+    width: 150px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#AAAAAA;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.EmptyButtonClose:hover{
+    width: 150px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border-radius: 5px;
+    background-color:#666666;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.EmptyWindow {
+    position: fixed;
+    background-color: #FFFFFF; 
+    display: block;
+    padding: 1%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(150, 150, 150, 0.5);
+    border: 1px solid lightgray;
+    width: 550px;
+    height: 370px;
+    left: 100px;
+    top: 50px;
+}
+
+.EmptyWindowTitle {
+    height:25px;
+    border-style:solid;
+    border-color:#C0C0C0;
+    border-left-width:1px;
+    border-top-left-radius:5px;
+    background-color:#808080;
+    color:#FFFFFF;
+    text-align:right;
+    padding:5px 5px 0px 5px;
+}
+
+.EmptyWindowContent{
+    width: 540px;
+    height: 280px;
+}

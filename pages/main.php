@@ -36,6 +36,7 @@ include_once '../view/board.php';
             <?php
             $sidebarRight = new Sidebar(Sidebar::SIDE_RIGHT);
             $sidebarRight->addTitle("Relative sections:");
+            $sidebarRight->addEmptyButton('emptyButton', 'Empty window');
             $sidebarRight->render();
             ?>
 
@@ -52,5 +53,8 @@ include_once '../view/board.php';
             <!-- FOOTER -->
             <?php require_once "../view/footer.php"; ?>
         </div>
+        
+        <!-- SCRIPTS -->
+        <script src="../script/script.js"></script>
     </body>
 </html>

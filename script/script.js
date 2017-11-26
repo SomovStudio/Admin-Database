@@ -1,29 +1,22 @@
 'use strict';
 
-function onShowCardList() 
-{
-    var cardList = document.getElementById('helpCardList');
-    cardList.style.opacity = 1;
-    cardList.style.zIndex = 1000;
-}
-
-function onCloseCardList() 
-{
-    var cardList = document.getElementById('helpCardList');
-    cardList.style.opacity = 0;
-    cardList.style.zIndex = -1000;
-}
-
-function onShowChallengeList() 
-{
-    var cardList = document.getElementById('helpChallengeList');
-    cardList.style.opacity = 1;
-    cardList.style.zIndex = 1000;
-}
-
-function onCloseChallengeList() 
-{
-    var cardList = document.getElementById('helpChallengeList');
-    cardList.style.opacity = 0;
-    cardList.style.zIndex = -1000;
-}
+(function () {
+    var emptyButton = document.getElementById('emptyButton');
+    emptyButton.addEventListener('click', function () {
+        var element = document.createElement('div');
+        element.setAttribute('id', 'emptyWindow');
+        element.innerHTML = "<div class='EmptyWindow'>\n\
+        <div class='EmptyWindowTitle'>Empty window</div>\n\
+        <div class='EmptyWindowContent'>Content</div>\n\
+        <br><button id='emptyButtonClose' class='EmptyButtonClose'>Close</button>\n\
+        </div>";
+        document.body.appendChild(element);
+        
+        var emptyButtonClose = document.getElementById('emptyButtonClose');
+        emptyButtonClose.addEventListener('click', function () {
+            var element = document.getElementById('emptyWindow');
+            document.body.removeChild(element);
+            emptyButtonClose.removeEventListener('click', function (){});
+        });
+    });
+}());
